@@ -21,7 +21,7 @@ class _LandingState extends State<Landing> {
 
                     children: [
                         Image.asset(
-                            'assets/landingpage.png',
+                            'assets/others/landingpage.png',
                             fit: BoxFit.cover,
                         ),
 
