@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_shop_app/pages/home.dart';
 
 class Landing extends StatefulWidget {
     const Landing({super.key});
@@ -20,6 +21,7 @@ class _LandingState extends State<Landing> {
                     crossAxisAlignment: CrossAxisAlignment.start,
 
                     children: [
+                        //* Cover Image
                         Image.asset(
                             'assets/others/landingpage.png',
                             fit: BoxFit.cover,
@@ -50,30 +52,52 @@ class _LandingState extends State<Landing> {
                         SizedBox(height: 30),
 
                         //* 'Next' button
-                        Center(
-                            child: Material(
-                                elevation: 3,
-                                borderRadius: BorderRadius.circular(25),
-                            
-                                child: Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-                                
-                                    decoration: BoxDecoration(
-                                        color: Colors.amber,
-                                        borderRadius: BorderRadius.circular(25)
+                        // Go Back
+                        GestureDetector(
+                            onTap: () {
+                                Navigator.of(context).push(
+                                    PageRouteBuilder(
+                                        pageBuilder: (context, animation, secondaryAnimation) => Home(),
+                                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                            return SlideTransition(
+                                                position: Tween<Offset>(
+                                                    begin: Offset(1.0, 0.0), // from right to left
+                                                    end: Offset.zero,
+                                                ).animate(animation),
+                                                    
+                                                child: child,
+                                            );
+                                        },
                                     ),
+                                );
+                            },
+
+                            // Next Button
+                            child: Center(
+                                child: Material(
+                                    elevation: 3,
+                                    borderRadius: BorderRadius.circular(25),
                                 
-                                    child: Text(
-                                        'Next',
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 34,
-                                            fontWeight: FontWeight.w500
+                                    child: Container(
+                                        padding: EdgeInsets.symmetric(horizontal: 60, vertical: 5),
+                                    
+                                        decoration: BoxDecoration(
+                                            color: Colors.amber,
+                                            borderRadius: BorderRadius.circular(25)
+                                        ),
+                                    
+                                        child: Text(
+                                            'Next',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 30,
+                                                fontWeight: FontWeight.w500
+                                            ),
                                         ),
                                     ),
                                 ),
                             ),
-                        )
+                        ),
                     ],
                 ),
             ),
