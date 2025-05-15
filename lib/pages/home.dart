@@ -2828,10 +2828,11 @@ class _HomeState extends State<Home> {
                             SizedBox(height: 20),
 
                             //! * Start of ListView of Bakery Items
+                            //* 'Bakery Items' Label
                             Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
-                                //* Vegetables
+                                //* Bakery Items
                                 children: [
                                     Text(
                                         'Bakery Items',
