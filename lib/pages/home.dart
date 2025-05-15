@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_shop_app/fooddetailspage/appledetail.dart';
+import 'package:grocery_shop_app/fooddetailspage/orangedetail%20copy.dart';
+import 'package:grocery_shop_app/fooddetailspage/peachdetail.dart';
+import 'package:grocery_shop_app/fooddetailspage/strawberrydetail.dart';
 
 class Home extends StatefulWidget {
     const Home({super.key});
@@ -35,6 +39,24 @@ class _HomeState extends State<Home> {
                                             //* Name Label
                                             Row(
                                                 children: [
+                                                    //* Go Back
+                                                    GestureDetector(
+                                                        child: Column(
+                                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                                            
+                                                            children: [
+                                                                GestureDetector(
+                                                                    onTap: () {
+                                                                        Navigator.pop(context);
+                                                                    },
+                                                                    child: Icon(Icons.arrow_back_ios_new_outlined)
+                                                                ),
+                                                            ]
+                                                        ),
+                                                    ),
+
+                                                    SizedBox(width: 10),
+
                                                     //* Wave Emoji
                                                     Image.asset(
                                                         'assets/others/wave.png',
@@ -108,12 +130,11 @@ class _HomeState extends State<Home> {
                 
                             SizedBox(height: 20),
                             
-                            //! * ListView of the Fruis
+                            //! * ListView of the Fruits
                             //* 'Fruits' Label
                             Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                
-                                //* Top Selling Label
+
                                 children: [
                                     Text(
                                         'Fruits',
@@ -139,128 +160,168 @@ class _HomeState extends State<Home> {
                                         //* All design for a single product
                                         
                                         //* For Strawberry
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Strawberry',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
+                                        GestureDetector(
+                                            onTap: () {
+                                                Navigator.of(context).push(
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (context, animation, secondaryAnimation) => Strawberrydetail(),
+                                                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(
+                                                                    begin: Offset(1.0, 0.0), // from right to left
+                                                                    end: Offset.zero,
+                                                                ).animate(animation),
+                                                                    
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
+                                                );
+                                            },
+
+                                            child: Container(
+                                                padding: EdgeInsets.only(left: 15, top: 10),
+                                                margin: EdgeInsets.only(right: 20),
+                                                            
+                                                decoration: BoxDecoration(
+                                                    color: Color(0xffffe08e),
+                                                    borderRadius: BorderRadius.circular(30)
+                                                ),
+                                                
+                                                child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                            
+                                                    //* Name, Price and Image of the product
+                                                    children: [
+                                                        //* Name of the product
+                                                        Text(
+                                                            'Strawberry',
+                                                            style: TextStyle(
+                                                                color: Colors.black,
+                                                                fontSize: 20,
+                                                                fontWeight: FontWeight.bold
+                                                            ),
                                                         ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/strawberry.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
+                                                            
+                                                        //* Price of the product
+                                                        Text(
+                                                            '\$2.99',
+                                                            style: TextStyle(
+                                                                color: Colors.black54,
+                                                                fontSize: 18,
+                                                                fontWeight: FontWeight.bold
+                                                            ),
                                                         ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
+                                                        
+                                                        //* Image of the product
+                                                        Image.asset(
+                                                            'assets/fruits/strawberry.png',
+                                                            height: 150,
+                                                            width: 150,
+                                                            fit: BoxFit.cover,
                                                         ),
-                                                    ),
-                                                ],
+                                                            
+                                                        //* Add (+) Icon
+                                                        Container(
+                                                            padding: EdgeInsets.all(8),
+                                                            margin: EdgeInsets.only(left: 104),
+                                                            
+                                                            decoration: BoxDecoration(
+                                                                color: Colors.green[800],
+                                                                borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
+                                                            ),
+                                                        
+                                                            child: Icon(
+                                                                Icons.add,
+                                                                size: 30,
+                                                                color: Colors.white,
+                                                            ),
+                                                        ),
+                                                    ],
+                                                ),
                                             ),
                                         ),
                 
                                         //* For Peach
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Peach',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
+                                        GestureDetector(
+                                            onTap: () {
+                                                Navigator.of(context).push(
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (context, animation, secondaryAnimation) => Peachdetail(),
+                                                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(
+                                                                    begin: Offset(1.0, 0.0), // from right to left
+                                                                    end: Offset.zero,
+                                                                ).animate(animation),
+                                                                    
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
+                                                );
+                                            },
+
+                                            child: Container(
+                                                padding: EdgeInsets.only(left: 15, top: 10),
+                                                margin: EdgeInsets.only(right: 20),
+                                                            
+                                                decoration: BoxDecoration(
+                                                    color: Color(0xffffe08e),
+                                                    borderRadius: BorderRadius.circular(30)
+                                                ),
+                                                
+                                                child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                            
+                                                    //* Name, Price and Image of the product
+                                                    children: [
+                                                        //* Name of the product
+                                                        Text(
+                                                            'Peach',
+                                                            style: TextStyle(
+                                                                color: Colors.black,
+                                                                fontSize: 20,
+                                                                fontWeight: FontWeight.bold
+                                                            ),
                                                         ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/peach.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
+                                                            
+                                                        //* Price of the product
+                                                        Text(
+                                                            '\$2.99',
+                                                            style: TextStyle(
+                                                                color: Colors.black54,
+                                                                fontSize: 18,
+                                                                fontWeight: FontWeight.bold
+                                                            ),
                                                         ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
+                                                        
+                                                        //* Image of the product
+                                                        Image.asset(
+                                                            'assets/fruits/peach.png',
+                                                            height: 150,
+                                                            width: 150,
+                                                            fit: BoxFit.cover,
                                                         ),
-                                                    ),
-                                                ],
+                                                            
+                                                        //* Add (+) Icon
+                                                        Container(
+                                                            padding: EdgeInsets.all(8),
+                                                            margin: EdgeInsets.only(left: 104),
+                                                            
+                                                            decoration: BoxDecoration(
+                                                                color: Colors.green[800],
+                                                                borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
+                                                            ),
+                                                        
+                                                            child: Icon(
+                                                                Icons.add,
+                                                                size: 30,
+                                                                color: Colors.white,
+                                                            ),
+                                                        ),
+                                                    ],
+                                                ),
                                             ),
                                         ),
                 
@@ -391,128 +452,168 @@ class _HomeState extends State<Home> {
                                         ),
                 
                                         //* For Orange
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Orange',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
+                                        GestureDetector(
+                                            onTap: () {
+                                                Navigator.of(context).push(
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (context, animation, secondaryAnimation) => OrangeDetail(),
+                                                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(
+                                                                    begin: Offset(1.0, 0.0), // from right to left
+                                                                    end: Offset.zero,
+                                                                ).animate(animation),
+                                                                    
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
+                                                );
+                                            },
+
+                                            child: Container(
+                                                padding: EdgeInsets.only(left: 15, top: 10),
+                                                margin: EdgeInsets.only(right: 20),
+                                                            
+                                                decoration: BoxDecoration(
+                                                    color: Color(0xffffe08e),
+                                                    borderRadius: BorderRadius.circular(30)
+                                                ),
+                                                
+                                                child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                            
+                                                    //* Name, Price and Image of the product
+                                                    children: [
+                                                        //* Name of the product
+                                                        Text(
+                                                            'Orange',
+                                                            style: TextStyle(
+                                                                color: Colors.black,
+                                                                fontSize: 20,
+                                                                fontWeight: FontWeight.bold
+                                                            ),
                                                         ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/orange.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
+                                                            
+                                                        //* Price of the product
+                                                        Text(
+                                                            '\$2.99',
+                                                            style: TextStyle(
+                                                                color: Colors.black54,
+                                                                fontSize: 18,
+                                                                fontWeight: FontWeight.bold
+                                                            ),
                                                         ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
+                                                        
+                                                        //* Image of the product
+                                                        Image.asset(
+                                                            'assets/fruits/orange.png',
+                                                            height: 150,
+                                                            width: 150,
+                                                            fit: BoxFit.cover,
                                                         ),
-                                                    ),
-                                                ],
+                                                            
+                                                        //* Add (+) Icon
+                                                        Container(
+                                                            padding: EdgeInsets.all(8),
+                                                            margin: EdgeInsets.only(left: 104),
+                                                            
+                                                            decoration: BoxDecoration(
+                                                                color: Colors.green[800],
+                                                                borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
+                                                            ),
+                                                        
+                                                            child: Icon(
+                                                                Icons.add,
+                                                                size: 30,
+                                                                color: Colors.white,
+                                                            ),
+                                                        ),
+                                                    ],
+                                                ),
                                             ),
                                         ),
                 
                                         //* For Apple
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Apple',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
+                                        GestureDetector(
+                                            onTap: () {
+                                                Navigator.of(context).push(
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (context, animation, secondaryAnimation) => AppleDetail(),
+                                                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(
+                                                                    begin: Offset(1.0, 0.0), // from right to left
+                                                                    end: Offset.zero,
+                                                                ).animate(animation),
+                                                                    
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
+                                                );
+                                            },
+
+                                            child: Container(
+                                                padding: EdgeInsets.only(left: 15, top: 10),
+                                                margin: EdgeInsets.only(right: 20),
+                                                            
+                                                decoration: BoxDecoration(
+                                                    color: Color(0xffffe08e),
+                                                    borderRadius: BorderRadius.circular(30)
+                                                ),
+                                                
+                                                child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                            
+                                                    //* Name, Price and Image of the product
+                                                    children: [
+                                                        //* Name of the product
+                                                        Text(
+                                                            'Apple',
+                                                            style: TextStyle(
+                                                                color: Colors.black,
+                                                                fontSize: 20,
+                                                                fontWeight: FontWeight.bold
+                                                            ),
                                                         ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/apple.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
+                                                            
+                                                        //* Price of the product
+                                                        Text(
+                                                            '\$2.99',
+                                                            style: TextStyle(
+                                                                color: Colors.black54,
+                                                                fontSize: 18,
+                                                                fontWeight: FontWeight.bold
+                                                            ),
                                                         ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
+                                                        
+                                                        //* Image of the product
+                                                        Image.asset(
+                                                            'assets/fruits/apple.png',
+                                                            height: 150,
+                                                            width: 150,
+                                                            fit: BoxFit.cover,
                                                         ),
-                                                    ),
-                                                ],
+                                                            
+                                                        //* Add (+) Icon
+                                                        Container(
+                                                            padding: EdgeInsets.all(8),
+                                                            margin: EdgeInsets.only(left: 104),
+                                                            
+                                                            decoration: BoxDecoration(
+                                                                color: Colors.green[800],
+                                                                borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
+                                                            ),
+                                                        
+                                                            child: Icon(
+                                                                Icons.add,
+                                                                size: 30,
+                                                                color: Colors.white,
+                                                            ),
+                                                        ),
+                                                    ],
+                                                ),
                                             ),
                                         ),
                 
