@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_shop_app/fooddetailspage/appledetail.dart';
-import 'package:grocery_shop_app/fooddetailspage/orangedetail%20copy.dart';
-import 'package:grocery_shop_app/fooddetailspage/peachdetail.dart';
-import 'package:grocery_shop_app/fooddetailspage/strawberrydetail.dart';
+import 'package:grocery_shop_app/fruitdetailspage/appledetail.dart';
+import 'package:grocery_shop_app/fruitdetailspage/orangedetail%20copy.dart';
+import 'package:grocery_shop_app/fruitdetailspage/peachdetail.dart';
+import 'package:grocery_shop_app/fruitdetailspage/strawberrydetail.dart';
 
 class Home extends StatefulWidget {
     const Home({super.key});
