@@ -18,6 +18,8 @@ class _HomeState extends State<Home> {
                     padding: EdgeInsets.only(top: 50, left: 20, right: 20),
                 
                     child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+
                         children: [
                             //* Name and Profile Image
                             Row(
@@ -3428,6 +3430,360 @@ class _HomeState extends State<Home> {
                                 ),
                             ),
                             //! End of ListView of Bakery Items
+
+                            SizedBox(height: 20),
+
+                            //! *Near You
+                            Text(
+                                'Near You',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold
+                                ),
+                            ),
+
+                            //!
+                            Text(
+                                '28+ Shops',
+                                style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold
+                                ),
+                            ),
+
+                            SizedBox(height: 10),
+
+                            //! Start of Shop1 details
+                            Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+
+                                children: [
+                                    ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+
+                                        child: Image.asset(
+                                            'assets/others/grocery1.jpg',
+                                            height: 90,
+                                            width: 90,
+                                            fit: BoxFit.cover,
+                                        ),
+                                    ),
+
+                                    SizedBox(width: 10),
+
+                                    //* Shop Name and Time
+                                    Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+
+                                        children: [
+                                            Text(
+                                                'Food 365 Vlley',
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.bold
+                                                ),
+                                            ),
+
+                                            SizedBox(height: 3),
+
+                                            Text(
+                                                '9 am to 11 pm',
+                                                style: TextStyle(
+                                                    color: Colors.black54,
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.bold
+                                                ),
+                                            ),
+
+                                            SizedBox(height: 5),
+
+                                            Row(
+                                                children: [
+                                                    Icon(
+                                                        Icons.star,
+                                                        color: Colors.black
+                                                    ),
+                                                    
+                                                    Text(
+                                                        '4.8 | ',
+                                                        style: TextStyle(
+                                                            color: Colors.black54,
+                                                            fontSize: 16,
+                                                            fontWeight: FontWeight.bold
+                                                        ),
+                                                    ),
+
+                                                    Icon(
+                                                        Icons.location_on,
+                                                        color: Colors.black
+                                                    ),
+                                                    
+                                                    Text(
+                                                        '1.5 km',
+                                                        style: TextStyle(
+                                                            color: Colors.black54,
+                                                            fontSize: 16,
+                                                            fontWeight: FontWeight.bold
+                                                        ),
+                                                    ),
+                                                ],
+                                            ),
+                                        ],
+                                    ),
+                                ],
+                            ),
+
+                            SizedBox(height: 20),
+
+                            //! Start of Shop2 details
+                            Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+
+                                children: [
+                                    ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+
+                                        child: Image.asset(
+                                            'assets/others/grocery2.jpg',
+                                            height: 90,
+                                            width: 90,
+                                            fit: BoxFit.cover,
+                                        ),
+                                    ),
+
+                                    SizedBox(width: 10),
+
+                                    //* Shop Name and Time
+                                    Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+
+                                        children: [
+                                            Text(
+                                                'Basket Super Shop',
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.bold
+                                                ),
+                                            ),
+
+                                            SizedBox(height: 3),
+
+                                            Text(
+                                                '9 am to 10 pm',
+                                                style: TextStyle(
+                                                    color: Colors.black54,
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.bold
+                                                ),
+                                            ),
+
+                                            SizedBox(height: 5),
+
+                                            Row(
+                                                children: [
+                                                    Icon(
+                                                        Icons.star,
+                                                        color: Colors.black
+                                                    ),
+                                                    
+                                                    Text(
+                                                        '4.7',
+                                                        style: TextStyle(
+                                                            color: Colors.black54,
+                                                            fontSize: 16,
+                                                            fontWeight: FontWeight.bold
+                                                        ),
+                                                    ),
+
+                                                    Icon(
+                                                        Icons.location_on,
+                                                        color: Colors.black
+                                                    ),
+                                                    
+                                                    Text(
+                                                        '2.2 km',
+                                                        style: TextStyle(
+                                                            color: Colors.black54,
+                                                            fontSize: 16,
+                                                            fontWeight: FontWeight.bold
+                                                        ),
+                                                    ),
+                                                ],
+                                            ),
+                                        ],
+                                    ),
+                                ],
+                            ),
+
+                            SizedBox(height: 20),
+
+                            //! Start of Shop3 details
+                            Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+
+                                children: [
+                                    ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+
+                                        child: Image.asset(
+                                            'assets/others/grocery3.jpg',
+                                            height: 90,
+                                            width: 90,
+                                            fit: BoxFit.cover,
+                                        ),
+                                    ),
+
+                                    SizedBox(width: 10),
+
+                                    //* Shop Name and Time
+                                    Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+
+                                        children: [
+                                            Text(
+                                                'Grocery King',
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.bold
+                                                ),
+                                            ),
+
+                                            SizedBox(height: 3),
+
+                                            Text(
+                                                '9 am to 12 am',
+                                                style: TextStyle(
+                                                    color: Colors.black54,
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.bold
+                                                ),
+                                            ),
+
+                                            SizedBox(height: 5),
+
+                                            Row(
+                                                children: [
+                                                    Icon(
+                                                        Icons.star,
+                                                        color: Colors.black
+                                                    ),
+                                                    
+                                                    Text(
+                                                        '4.9',
+                                                        style: TextStyle(
+                                                            color: Colors.black54,
+                                                            fontSize: 16,
+                                                            fontWeight: FontWeight.bold
+                                                        ),
+                                                    ),
+
+                                                    Icon(
+                                                        Icons.location_on,
+                                                        color: Colors.black
+                                                    ),
+                                                    
+                                                    Text(
+                                                        '0.7 km',
+                                                        style: TextStyle(
+                                                            color: Colors.black54,
+                                                            fontSize: 16,
+                                                            fontWeight: FontWeight.bold
+                                                        ),
+                                                    ),
+                                                ],
+                                            ),
+                                        ],
+                                    ),
+                                ],
+                            ),
+
+                            SizedBox(height: 20),
+
+                            //! Start of Shop4 details
+                            Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+
+                                children: [
+                                    ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+
+                                        child: Image.asset(
+                                            'assets/others/grocery2.jpg',
+                                            height: 90,
+                                            width: 90,
+                                            fit: BoxFit.cover,
+                                        ),
+                                    ),
+
+                                    SizedBox(width: 10),
+
+                                    //* Shop Name and Time
+                                    Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+
+                                        children: [
+                                            Text(
+                                                'Freshland',
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.bold
+                                                ),
+                                            ),
+
+                                            SizedBox(height: 3),
+
+                                            Text(
+                                                '9 am to 11 pm',
+                                                style: TextStyle(
+                                                    color: Colors.black54,
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.bold
+                                                ),
+                                            ),
+
+                                            SizedBox(height: 5),
+
+                                            Row(
+                                                children: [
+                                                    Icon(
+                                                        Icons.star,
+                                                        color: Colors.black
+                                                    ),
+                                                    
+                                                    Text(
+                                                        '4.5',
+                                                        style: TextStyle(
+                                                            color: Colors.black54,
+                                                            fontSize: 16,
+                                                            fontWeight: FontWeight.bold
+                                                        ),
+                                                    ),
+
+                                                    Icon(
+                                                        Icons.location_on,
+                                                        color: Colors.black
+                                                    ),
+                                                    
+                                                    Text(
+                                                        '2.3 km',
+                                                        style: TextStyle(
+                                                            color: Colors.black54,
+                                                            fontSize: 16,
+                                                            fontWeight: FontWeight.bold
+                                                        ),
+                                                    ),
+                                                ],
+                                            ),
+                                        ],
+                                    ),
+                                ],
+                            ),
 
                             SizedBox(height: 100),
                         ],
