@@ -1007,396 +1007,396 @@ class _HomeState extends State<Home> {
                                             },
                                         ),
 
-                                        // Ginger
+                                        //* Ginger
                                         ProductCard(
-                                        name: 'Ginger',
-                                        imagePath: 'assets/vegetables/ginger.png',
-                                        price: 1.30,
-                                        color: Color(0xffffe08e),  // lighter shade for card
-                                        onTap: () {
-                                            Navigator.push(
-                                            context,
-                                            PageRouteBuilder(
-                                                pageBuilder: (_, animation, __) => ProductDetailPage(
-                                                name: 'Ginger',
-                                                imagePath: 'assets/vegetables/ginger.png',
-                                                price: 1.30,
-                                                description: 'Fresh ginger root to add zest and flavor.',
-                                                color: Color(0xFFCDAD71), // richer shade for detail page
-                                                ),
-                                                transitionsBuilder: (_, animation, __, child) {
-                                                return SlideTransition(
-                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
-                                                    child: child,
+                                            name: 'Ginger',
+                                            imagePath: 'assets/vegetables/ginger.png',
+                                            price: 1.30,
+                                            color: Color(0xffffe08e),  // lighter shade for card
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Ginger',
+                                                            imagePath: 'assets/vegetables/ginger.png',
+                                                            price: 1.30,
+                                                            description: 'Fresh ginger root to add zest and flavor.',
+                                                            color: Color(0xFFCDAD71), // richer shade for detail page
+                                                        ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
+                                                    ),
                                                 );
-                                                },
-                                            ),
-                                            );
-                                        },
+                                            },
                                         ),
 
-                                        // Onion
+                                        //* Onion
                                         ProductCard(
-                                        name: 'Onion',
-                                        imagePath: 'assets/vegetables/onion.png',
-                                        price: 0.80,
-                                        color: Color(0xFFFFDAB9),  // lighter shade for card
-                                        onTap: () {
-                                            Navigator.push(
-                                            context,
-                                            PageRouteBuilder(
-                                                pageBuilder: (_, animation, __) => ProductDetailPage(
-                                                name: 'Onion',
-                                                imagePath: 'assets/vegetables/onion.png',
-                                                price: 0.80,
-                                                description: 'Crisp and flavorful onions for every recipe.',
-                                                color: Color(0xFFB36B00), // richer shade for detail page
-                                                ),
-                                                transitionsBuilder: (_, animation, __, child) {
-                                                return SlideTransition(
-                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
-                                                    child: child,
+                                            name: 'Onion',
+                                            imagePath: 'assets/vegetables/onion.png',
+                                            price: 0.80,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Onion',
+                                                            imagePath: 'assets/vegetables/onion.png',
+                                                            price: 0.80,
+                                                            description: 'Crisp and flavorful onions for every recipe.',
+                                                            color: Color(0xffde3163),
+                                                        ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
+                                                    ),
                                                 );
-                                                },
-                                            ),
-                                            );
-                                        },
+                                            },
                                         ),
 
-                                        // Carrot
+                                        //* Carrot
                                         ProductCard(
-                                        name: 'Carrot',
-                                        imagePath: 'assets/vegetables/carrot.png',
-                                        price: 1.00,
-                                        color: Color(0xFFFFB347),  // lighter orange for card
-                                        onTap: () {
-                                            Navigator.push(
-                                            context,
-                                            PageRouteBuilder(
-                                                pageBuilder: (_, animation, __) => ProductDetailPage(
-                                                name: 'Carrot',
-                                                imagePath: 'assets/vegetables/carrot.png',
-                                                price: 1.00,
-                                                description: 'Crunchy and sweet carrots, perfect for snacks.',
-                                                color: Color(0xFFCD6600), // richer shade for detail page
-                                                ),
-                                                transitionsBuilder: (_, animation, __, child) {
-                                                return SlideTransition(
-                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
-                                                    child: child,
+                                            name: 'Carrot',
+                                            imagePath: 'assets/vegetables/carrot.png',
+                                            price: 1.00,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Carrot',
+                                                            imagePath: 'assets/vegetables/carrot.png',
+                                                            price: 1.00,
+                                                            description: 'Crunchy and sweet carrots, perfect for snacks.',
+                                                            color: Color(0xffcd6600),
+                                                        ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
+                                                    ),
                                                 );
-                                                },
-                                            ),
-                                            );
-                                        },
+                                            },
                                         ),
 
-                                        // Beetroot
+                                        //* Beetroot
                                         ProductCard(
-                                        name: 'Beetroot',
-                                        imagePath: 'assets/vegetables/beetroot.png',
-                                        price: 1.20,
-                                        color: Color(0xFFDE3163),  // lighter reddish-pink for card
-                                        onTap: () {
-                                            Navigator.push(
-                                            context,
-                                            PageRouteBuilder(
-                                                pageBuilder: (_, animation, __) => ProductDetailPage(
-                                                name: 'Beetroot',
-                                                imagePath: 'assets/vegetables/beetroot.png',
-                                                price: 1.20,
-                                                description: 'Earthy and sweet beetroots, rich in nutrients.',
-                                                color: Color(0xFF9C2547), // richer shade for detail page
-                                                ),
-                                                transitionsBuilder: (_, animation, __, child) {
-                                                return SlideTransition(
-                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
-                                                    child: child,
+                                            name: 'Beetroot',
+                                            imagePath: 'assets/vegetables/beetroot.png',
+                                            price: 1.20,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Beetroot',
+                                                            imagePath: 'assets/vegetables/beetroot.png',
+                                                            price: 1.20,
+                                                            description: 'Earthy and sweet beetroots, rich in nutrients.',
+                                                            color: Color(0xff9c2547),
+                                                        ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
+                                                    ),
                                                 );
-                                                },
-                                            ),
-                                            );
-                                        },
+                                            },
                                         ),
 
-                                        // Eggplant
+                                        //* Eggplant
                                         ProductCard(
-                                        name: 'Eggplant',
-                                        imagePath: 'assets/vegetables/eggplant.png',
-                                        price: 1.30,
-                                        color: Color(0xFFB565A7),  // lighter purple for card
-                                        onTap: () {
-                                            Navigator.push(
-                                            context,
-                                            PageRouteBuilder(
-                                                pageBuilder: (_, animation, __) => ProductDetailPage(
-                                                name: 'Eggplant',
-                                                imagePath: 'assets/vegetables/eggplant.png',
-                                                price: 1.30,
-                                                description: 'Smooth and tender eggplants, ideal for grilling.',
-                                                color: Color(0xFF6F3975), // richer shade for detail page
-                                                ),
-                                                transitionsBuilder: (_, animation, __, child) {
-                                                return SlideTransition(
-                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
-                                                    child: child,
+                                            name: 'Eggplant',
+                                            imagePath: 'assets/vegetables/eggplant.png',
+                                            price: 1.30,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Eggplant',
+                                                            imagePath: 'assets/vegetables/eggplant.png',
+                                                            price: 1.30,
+                                                            description: 'Smooth and tender eggplants, ideal for grilling.',
+                                                            color: Color(0xff6f3975),
+                                                        ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
+                                                    ),
                                                 );
-                                                },
-                                            ),
-                                            );
-                                        },
+                                            },
                                         ),
 
-                                        // Cucumber
+                                        //* Cucumber
                                         ProductCard(
-                                        name: 'Cucumber',
-                                        imagePath: 'assets/vegetables/cucumber.png',
-                                        price: 0.75,
-                                        color: Color(0xFFB0E57C),  // lighter green for card
-                                        onTap: () {
-                                            Navigator.push(
-                                            context,
-                                            PageRouteBuilder(
-                                                pageBuilder: (_, animation, __) => ProductDetailPage(
-                                                name: 'Cucumber',
-                                                imagePath: 'assets/vegetables/cucumber.png',
-                                                price: 0.75,
-                                                description: 'Cool and refreshing cucumbers for salads.',
-                                                color: Color(0xFF689F38), // richer shade for detail page
-                                                ),
-                                                transitionsBuilder: (_, animation, __, child) {
-                                                return SlideTransition(
-                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
-                                                    child: child,
+                                            name: 'Cucumber',
+                                            imagePath: 'assets/vegetables/cucumber.png',
+                                            price: 0.75,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Cucumber',
+                                                            imagePath: 'assets/vegetables/cucumber.png',
+                                                            price: 0.75,
+                                                            description: 'Cool and refreshing cucumbers for salads.',
+                                                            color: Color(0xff689f38),
+                                                        ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
+                                                    ),
                                                 );
-                                                },
-                                            ),
-                                            );
-                                        },
+                                            },
                                         ),
 
-                                        // Jalapeno
+                                        //* Jalapeno
                                         ProductCard(
-                                        name: 'Jalapeno',
-                                        imagePath: 'assets/vegetables/jalapeno.png',
-                                        price: 1.60,
-                                        color: Color(0xFF7ED957),  // lighter green for card
-                                        onTap: () {
-                                            Navigator.push(
-                                            context,
-                                            PageRouteBuilder(
-                                                pageBuilder: (_, animation, __) => ProductDetailPage(
-                                                name: 'Jalapeno',
-                                                imagePath: 'assets/vegetables/jalapeno.png',
-                                                price: 1.60,
-                                                description: 'Spicy jalapenos to add heat to your meals.',
-                                                color: Color(0xFF357A38), // richer shade for detail page
-                                                ),
-                                                transitionsBuilder: (_, animation, __, child) {
-                                                return SlideTransition(
-                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
-                                                    child: child,
+                                            name: 'Jalapeno',
+                                            imagePath: 'assets/vegetables/jalapeno.png',
+                                            price: 1.60,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Jalapeno',
+                                                            imagePath: 'assets/vegetables/jalapeno.png',
+                                                            price: 1.60,
+                                                            description: 'Spicy jalapenos to add heat to your meals.',
+                                                            color: Color(0xff357a38),
+                                                        ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
+                                                    ),
                                                 );
-                                                },
-                                            ),
-                                            );
-                                        },
+                                            },
                                         ),
 
-                                        // Pumpkin
+                                        //* Pumpkin
                                         ProductCard(
-                                        name: 'Pumpkin',
-                                        imagePath: 'assets/vegetables/pumpkin.png',
-                                        price: 1.10,
-                                        color: Color(0xFFFFD27F),  // lighter orange for card
-                                        onTap: () {
-                                            Navigator.push(
-                                            context,
-                                            PageRouteBuilder(
-                                                pageBuilder: (_, animation, __) => ProductDetailPage(
-                                                name: 'Pumpkin',
-                                                imagePath: 'assets/vegetables/pumpkin.png',
-                                                price: 1.10,
-                                                description: 'Sweet pumpkin, perfect for soups and pies.',
-                                                color: Color(0xFFB26500), // richer shade for detail page
-                                                ),
-                                                transitionsBuilder: (_, animation, __, child) {
-                                                return SlideTransition(
-                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
-                                                    child: child,
+                                            name: 'Pumpkin',
+                                            imagePath: 'assets/vegetables/pumpkin.png',
+                                            price: 1.10,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Pumpkin',
+                                                            imagePath: 'assets/vegetables/pumpkin.png',
+                                                            price: 1.10,
+                                                            description: 'Sweet pumpkin, perfect for soups and pies.',
+                                                            color: Color(0xffb26500),
+                                                        ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
+                                                    ),
                                                 );
-                                                },
-                                            ),
-                                            );
-                                        },
+                                            },
                                         ),
 
-                                        // Cabbage
+                                        //* Cabbage
                                         ProductCard(
-                                        name: 'Cabbage',
-                                        imagePath: 'assets/vegetables/cabbage.png',
-                                        price: 0.85,
-                                        color: Color(0xFFC1E1C1),  // lighter green for card
-                                        onTap: () {
-                                            Navigator.push(
-                                            context,
-                                            PageRouteBuilder(
-                                                pageBuilder: (_, animation, __) => ProductDetailPage(
-                                                name: 'Cabbage',
-                                                imagePath: 'assets/vegetables/cabbage.png',
-                                                price: 0.85,
-                                                description: 'Crunchy cabbage, great for salads and cooking.',
-                                                color: Color(0xFF7BA66D), // richer shade for detail page
-                                                ),
-                                                transitionsBuilder: (_, animation, __, child) {
-                                                return SlideTransition(
-                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
-                                                    child: child,
+                                            name: 'Cabbage',
+                                            imagePath: 'assets/vegetables/cabbage.png',
+                                            price: 0.85,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Cabbage',
+                                                            imagePath: 'assets/vegetables/cabbage.png',
+                                                            price: 0.85,
+                                                            description: 'Crunchy cabbage, great for salads and cooking.',
+                                                            color: Color(0xff7ba66d),
+                                                        ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
+                                                    ),
                                                 );
-                                                },
-                                            ),
-                                            );
-                                        },
+                                            },
                                         ),
 
-                                        // Cauliflower
+                                        //* Cauliflower
                                         ProductCard(
-                                        name: 'Cauliflower',
-                                        imagePath: 'assets/vegetables/cauliflower.png',
-                                        price: 1.00,
-                                        color: Color(0xFFEDEDED),  // light cream for card
-                                        onTap: () {
-                                            Navigator.push(
-                                            context,
-                                            PageRouteBuilder(
-                                                pageBuilder: (_, animation, __) => ProductDetailPage(
-                                                name: 'Cauliflower',
-                                                imagePath: 'assets/vegetables/cauliflower.png',
-                                                price: 1.00,
-                                                description: 'Fresh cauliflower heads, perfect for healthy meals.',
-                                                color: Color(0xFFB4B4B4), // richer shade for detail page
-                                                ),
-                                                transitionsBuilder: (_, animation, __, child) {
-                                                return SlideTransition(
-                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
-                                                    child: child,
+                                            name: 'Cauliflower',
+                                            imagePath: 'assets/vegetables/cauliflower.png',
+                                            price: 1.00,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Cauliflower',
+                                                            imagePath: 'assets/vegetables/cauliflower.png',
+                                                            price: 1.00,
+                                                            description: 'Fresh cauliflower heads, perfect for healthy meals.',
+                                                            color: Color(0xffb4b4b4),
+                                                        ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
+                                                    ),
                                                 );
-                                                },
-                                            ),
-                                            );
-                                        },
+                                            },
                                         ),
 
-                                        // Broccoli
+                                        //* Broccoli
                                         ProductCard(
-                                        name: 'Broccoli',
-                                        imagePath: 'assets/vegetables/broccoli.png',
-                                        price: 1.25,
-                                        color: Color(0xFFA2D149),  // lighter green for card
-                                        onTap: () {
-                                            Navigator.push(
-                                            context,
-                                            PageRouteBuilder(
-                                                pageBuilder: (_, animation, __) => ProductDetailPage(
-                                                name: 'Broccoli',
-                                                imagePath: 'assets/vegetables/broccoli.png',
-                                                price: 1.25,
-                                                description: 'Fresh broccoli rich in vitamins and minerals.',
-                                                color: Color(0xFF567D29), // richer shade for detail page
-                                                ),
-                                                transitionsBuilder: (_, animation, __, child) {
-                                                return SlideTransition(
-                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
-                                                    child: child,
+                                            name: 'Broccoli',
+                                            imagePath: 'assets/vegetables/broccoli.png',
+                                            price: 1.25,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Broccoli',
+                                                            imagePath: 'assets/vegetables/broccoli.png',
+                                                            price: 1.25,
+                                                            description: 'Fresh broccoli rich in vitamins and minerals.',
+                                                            color: Color(0xff567d29),
+                                                        ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
+                                                    ),
                                                 );
-                                                },
-                                            ),
-                                            );
-                                        },
+                                            },
                                         ),
 
-                                        // Ladyfinger (Okra)
+                                        //* Ladyfinger
                                         ProductCard(
-                                        name: 'Ladyfinger',
-                                        imagePath: 'assets/vegetables/ladyfinger.png',
-                                        price: 1.00,
-                                        color: Color(0xFF8FBC8F),  // lighter green for card
-                                        onTap: () {
-                                            Navigator.push(
-                                            context,
-                                            PageRouteBuilder(
-                                                pageBuilder: (_, animation, __) => ProductDetailPage(
-                                                name: 'Ladyfinger',
-                                                imagePath: 'assets/vegetables/ladyfinger.png',
-                                                price: 1.00,
-                                                description: 'Fresh ladyfinger pods, great for stews and curries.',
-                                                color: Color(0xFF3E704D), // richer shade for detail page
-                                                ),
-                                                transitionsBuilder: (_, animation, __, child) {
-                                                return SlideTransition(
-                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
-                                                    child: child,
+                                            name: 'Ladyfinger',
+                                            imagePath: 'assets/vegetables/ladyfinger.png',
+                                            price: 1.00,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Ladyfinger',
+                                                            imagePath: 'assets/vegetables/ladyfinger.png',
+                                                            price: 1.00,
+                                                            description: 'Fresh ladyfinger pods, great for stews and curries.',
+                                                            color: Color(0xff3e704d),
+                                                        ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
+                                                    ),
                                                 );
-                                                },
-                                            ),
-                                            );
-                                        },
+                                            },
                                         ),
 
-                                        // Lettuce
+                                        //* Lettuce
                                         ProductCard(
-                                        name: 'Lettuce',
-                                        imagePath: 'assets/vegetables/lettuce.png',
-                                        price: 0.90,
-                                        color: Color(0xFFB9E4C9),  // lighter green for card
-                                        onTap: () {
-                                            Navigator.push(
-                                            context,
-                                            PageRouteBuilder(
-                                                pageBuilder: (_, animation, __) => ProductDetailPage(
-                                                name: 'Lettuce',
-                                                imagePath: 'assets/vegetables/lettuce.png',
-                                                price: 0.90,
-                                                description: 'Fresh lettuce leaves, perfect for salads.',
-                                                color: Color(0xFF5DA36F), // richer shade for detail page
-                                                ),
-                                                transitionsBuilder: (_, animation, __, child) {
-                                                return SlideTransition(
-                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
-                                                    child: child,
+                                            name: 'Lettuce',
+                                            imagePath: 'assets/vegetables/lettuce.png',
+                                            price: 0.90,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Lettuce',
+                                                            imagePath: 'assets/vegetables/lettuce.png',
+                                                            price: 0.90,
+                                                            description: 'Fresh lettuce leaves, perfect for salads.',
+                                                            color: Color(0xff5da36f),
+                                                        ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
+                                                    ),
                                                 );
-                                                },
-                                            ),
-                                            );
-                                        },
+                                            },
                                         ),
 
-                                        // Parsley
+                                        //* Parsley
                                         ProductCard(
-                                        name: 'Parsley',
-                                        imagePath: 'assets/vegetables/parsley.png',
-                                        price: 1.10,
-                                        color: Color(0xFF93C572),  // lighter green for card
-                                        onTap: () {
-                                            Navigator.push(
-                                            context,
-                                            PageRouteBuilder(
-                                                pageBuilder: (_, animation, __) => ProductDetailPage(
-                                                name: 'Parsley',
-                                                imagePath: 'assets/vegetables/parsley.png',
-                                                price: 1.10,
-                                                description: 'Fresh parsley leaves to garnish and flavor dishes.',
-                                                color: Color(0xFF4B7B26), // richer shade for detail page
-                                                ),
-                                                transitionsBuilder: (_, animation, __, child) {
-                                                return SlideTransition(
-                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
-                                                    child: child,
+                                            name: 'Parsley',
+                                            imagePath: 'assets/vegetables/parsley.png',
+                                            price: 1.10,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Parsley',
+                                                            imagePath: 'assets/vegetables/parsley.png',
+                                                            price: 1.10,
+                                                            description: 'Fresh parsley leaves to garnish and flavor dishes.',
+                                                            color: Color(0xff4b7b26),
+                                                        ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
+                                                    ),
                                                 );
-                                                },
-                                            ),
-                                            );
-                                        },
+                                            },
                                         ),
 
 
