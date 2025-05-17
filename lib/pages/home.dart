@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_shop_app/fruitdetailspage/appledetail.dart';
-import 'package:grocery_shop_app/fruitdetailspage/orangedetail%20copy.dart';
-import 'package:grocery_shop_app/fruitdetailspage/peachdetail.dart';
-import 'package:grocery_shop_app/fruitdetailspage/strawberrydetail.dart';
+import 'package:grocery_shop_app/pages/product_design_card.dart';
+import 'package:grocery_shop_app/pages/product_detail_page.dart';
 
 class Home extends StatefulWidget {
     const Home({super.key});
@@ -148,7 +146,8 @@ class _HomeState extends State<Home> {
                             ),
                 
                             SizedBox(height: 20),
-                   
+
+                            //* The Fruit List
                             Container(
                                 height: 261,
                 
@@ -160,1471 +159,643 @@ class _HomeState extends State<Home> {
                                         //* All design for a single product
                                         
                                         //* For Strawberry
-                                        GestureDetector(
+                                        ProductCard(
+                                            name: 'Strawberry',
+                                            imagePath: 'assets/fruits/strawberry.png',
+                                            price: 2.99,
+                                            color: Color(0xffffe08e),
                                             onTap: () {
-                                                Navigator.of(context).push(
+                                                Navigator.push(
+                                                    context,
                                                     PageRouteBuilder(
-                                                        pageBuilder: (context, animation, secondaryAnimation) => Strawberrydetail(),
-                                                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Strawberry',
+                                                            imagePath: 'assets/fruits/strawberry.png',
+                                                            price: 2.99,
+                                                            description: 'Sweet and juicy strawberries packed with vitamins.',
+                                                            color: Color(0xFFDE3163),
+                                                        ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
                                                             return SlideTransition(
-                                                                position: Tween<Offset>(
-                                                                    begin: Offset(1.0, 0.0), // from right to left
-                                                                    end: Offset.zero,
-                                                                ).animate(animation),
-                                                                    
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
                                                                 child: child,
                                                             );
                                                         },
                                                     ),
                                                 );
                                             },
-
-                                            child: Container(
-                                                padding: EdgeInsets.only(left: 15, top: 10),
-                                                margin: EdgeInsets.only(right: 20),
-                                                            
-                                                decoration: BoxDecoration(
-                                                    color: Color(0xffffe08e),
-                                                    borderRadius: BorderRadius.circular(30)
-                                                ),
-                                                
-                                                child: Column(
-                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                            
-                                                    //* Name, Price and Image of the product
-                                                    children: [
-                                                        //* Name of the product
-                                                        Text(
-                                                            'Strawberry',
-                                                            style: TextStyle(
-                                                                color: Colors.black,
-                                                                fontSize: 20,
-                                                                fontWeight: FontWeight.bold
-                                                            ),
-                                                        ),
-                                                            
-                                                        //* Price of the product
-                                                        Text(
-                                                            '\$2.99',
-                                                            style: TextStyle(
-                                                                color: Colors.black54,
-                                                                fontSize: 18,
-                                                                fontWeight: FontWeight.bold
-                                                            ),
-                                                        ),
-                                                        
-                                                        //* Image of the product
-                                                        Image.asset(
-                                                            'assets/fruits/strawberry.png',
-                                                            height: 150,
-                                                            width: 150,
-                                                            fit: BoxFit.cover,
-                                                        ),
-                                                            
-                                                        //* Add (+) Icon
-                                                        Container(
-                                                            padding: EdgeInsets.all(8),
-                                                            margin: EdgeInsets.only(left: 104),
-                                                            
-                                                            decoration: BoxDecoration(
-                                                                color: Colors.green[800],
-                                                                borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                            ),
-                                                        
-                                                            child: Icon(
-                                                                Icons.add,
-                                                                size: 30,
-                                                                color: Colors.white,
-                                                            ),
-                                                        ),
-                                                    ],
-                                                ),
-                                            ),
                                         ),
-                
+                                        
                                         //* For Peach
-                                        GestureDetector(
+                                        ProductCard(
+                                            name: 'Peach',
+                                            imagePath: 'assets/fruits/peach.png',
+                                            price: 1.95,
+                                            color: Color(0xffffe08e),
                                             onTap: () {
-                                                Navigator.of(context).push(
+                                                Navigator.push(
+                                                    context,
                                                     PageRouteBuilder(
-                                                        pageBuilder: (context, animation, secondaryAnimation) => Peachdetail(),
-                                                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Peach',
+                                                            imagePath: 'assets/fruits/peach.png',
+                                                            price: 1.95,
+                                                            description: 'Sweet and juicy peaches packed with vitamins.',
+                                                            color: Color(0xFFFF7F50),
+                                                        ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
                                                             return SlideTransition(
-                                                                position: Tween<Offset>(
-                                                                    begin: Offset(1.0, 0.0), // from right to left
-                                                                    end: Offset.zero,
-                                                                ).animate(animation),
-                                                                    
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
                                                                 child: child,
                                                             );
                                                         },
                                                     ),
                                                 );
                                             },
-
-                                            child: Container(
-                                                padding: EdgeInsets.only(left: 15, top: 10),
-                                                margin: EdgeInsets.only(right: 20),
-                                                            
-                                                decoration: BoxDecoration(
-                                                    color: Color(0xffffe08e),
-                                                    borderRadius: BorderRadius.circular(30)
-                                                ),
-                                                
-                                                child: Column(
-                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                            
-                                                    //* Name, Price and Image of the product
-                                                    children: [
-                                                        //* Name of the product
-                                                        Text(
-                                                            'Peach',
-                                                            style: TextStyle(
-                                                                color: Colors.black,
-                                                                fontSize: 20,
-                                                                fontWeight: FontWeight.bold
-                                                            ),
-                                                        ),
-                                                            
-                                                        //* Price of the product
-                                                        Text(
-                                                            '\$2.99',
-                                                            style: TextStyle(
-                                                                color: Colors.black54,
-                                                                fontSize: 18,
-                                                                fontWeight: FontWeight.bold
-                                                            ),
-                                                        ),
-                                                        
-                                                        //* Image of the product
-                                                        Image.asset(
-                                                            'assets/fruits/peach.png',
-                                                            height: 150,
-                                                            width: 150,
-                                                            fit: BoxFit.cover,
-                                                        ),
-                                                            
-                                                        //* Add (+) Icon
-                                                        Container(
-                                                            padding: EdgeInsets.all(8),
-                                                            margin: EdgeInsets.only(left: 104),
-                                                            
-                                                            decoration: BoxDecoration(
-                                                                color: Colors.green[800],
-                                                                borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                            ),
-                                                        
-                                                            child: Icon(
-                                                                Icons.add,
-                                                                size: 30,
-                                                                color: Colors.white,
-                                                            ),
-                                                        ),
-                                                    ],
-                                                ),
-                                            ),
                                         ),
-                
+                                        
                                         //* For Pear
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Pear',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Pear',
+                                            imagePath: 'assets/fruits/pear.png',
+                                            price: 0.97,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Peach',
+                                                            imagePath: 'assets/fruits/pear.png',
+                                                            price: 0.97,
+                                                            description: 'Sweet and juicy pear packed with vitamins.',
+                                                            color: Color(0xFFB8EE7B),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/pear.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-                
+                                       
                                         //* For Pine Apple
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Pine Apple',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Pine Apple',
+                                            imagePath: 'assets/fruits/pineapple.png',
+                                            price: 0.89,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Pine Apple',
+                                                            imagePath: 'assets/fruits/pineapple.png',
+                                                            price: 0.89,
+                                                            description: 'Sweet and juicy pine apples packed with vitamins.',
+                                                            color: Color(0xFFF4D03F),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/pineapple.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-                
+                                        
                                         //* For Orange
-                                        GestureDetector(
+                                        ProductCard(
+                                            name: 'Orange',
+                                            imagePath: 'assets/fruits/orange.png',
+                                            price: 1.89,
+                                            color: Color(0xffffe08e),
                                             onTap: () {
-                                                Navigator.of(context).push(
+                                                Navigator.push(
+                                                    context,
                                                     PageRouteBuilder(
-                                                        pageBuilder: (context, animation, secondaryAnimation) => OrangeDetail(),
-                                                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Orange',
+                                                            imagePath: 'assets/fruits/orange.png',
+                                                            price: 1.89,
+                                                            description: 'Sweet and juicy oranges packed with vitamins.',
+                                                            color: Color(0xFFFFC04D),
+                                                        ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
                                                             return SlideTransition(
-                                                                position: Tween<Offset>(
-                                                                    begin: Offset(1.0, 0.0), // from right to left
-                                                                    end: Offset.zero,
-                                                                ).animate(animation),
-                                                                    
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
                                                                 child: child,
                                                             );
                                                         },
                                                     ),
                                                 );
                                             },
-
-                                            child: Container(
-                                                padding: EdgeInsets.only(left: 15, top: 10),
-                                                margin: EdgeInsets.only(right: 20),
-                                                            
-                                                decoration: BoxDecoration(
-                                                    color: Color(0xffffe08e),
-                                                    borderRadius: BorderRadius.circular(30)
-                                                ),
-                                                
-                                                child: Column(
-                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                            
-                                                    //* Name, Price and Image of the product
-                                                    children: [
-                                                        //* Name of the product
-                                                        Text(
-                                                            'Orange',
-                                                            style: TextStyle(
-                                                                color: Colors.black,
-                                                                fontSize: 20,
-                                                                fontWeight: FontWeight.bold
-                                                            ),
-                                                        ),
-                                                            
-                                                        //* Price of the product
-                                                        Text(
-                                                            '\$2.99',
-                                                            style: TextStyle(
-                                                                color: Colors.black54,
-                                                                fontSize: 18,
-                                                                fontWeight: FontWeight.bold
-                                                            ),
-                                                        ),
-                                                        
-                                                        //* Image of the product
-                                                        Image.asset(
-                                                            'assets/fruits/orange.png',
-                                                            height: 150,
-                                                            width: 150,
-                                                            fit: BoxFit.cover,
-                                                        ),
-                                                            
-                                                        //* Add (+) Icon
-                                                        Container(
-                                                            padding: EdgeInsets.all(8),
-                                                            margin: EdgeInsets.only(left: 104),
-                                                            
-                                                            decoration: BoxDecoration(
-                                                                color: Colors.green[800],
-                                                                borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                            ),
-                                                        
-                                                            child: Icon(
-                                                                Icons.add,
-                                                                size: 30,
-                                                                color: Colors.white,
-                                                            ),
-                                                        ),
-                                                    ],
-                                                ),
-                                            ),
                                         ),
-                
+                                        
                                         //* For Apple
-                                        GestureDetector(
+                                        ProductCard(
+                                            name: 'Apple',
+                                            imagePath: 'assets/fruits/apple.png',
+                                            price: 2.10,
+                                            color: Color(0xffffe08e),
                                             onTap: () {
-                                                Navigator.of(context).push(
+                                                Navigator.push(
+                                                    context,
                                                     PageRouteBuilder(
-                                                        pageBuilder: (context, animation, secondaryAnimation) => AppleDetail(),
-                                                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Apple',
+                                                            imagePath: 'assets/fruits/apple.png',
+                                                            price: 2.10,
+                                                            description: 'Sweet and juicy apples packed with vitamins.',
+                                                            color: Color(0xFFF1948A),
+                                                        ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
                                                             return SlideTransition(
-                                                                position: Tween<Offset>(
-                                                                    begin: Offset(1.0, 0.0), // from right to left
-                                                                    end: Offset.zero,
-                                                                ).animate(animation),
-                                                                    
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
                                                                 child: child,
                                                             );
                                                         },
                                                     ),
                                                 );
                                             },
-
-                                            child: Container(
-                                                padding: EdgeInsets.only(left: 15, top: 10),
-                                                margin: EdgeInsets.only(right: 20),
-                                                            
-                                                decoration: BoxDecoration(
-                                                    color: Color(0xffffe08e),
-                                                    borderRadius: BorderRadius.circular(30)
-                                                ),
-                                                
-                                                child: Column(
-                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                            
-                                                    //* Name, Price and Image of the product
-                                                    children: [
-                                                        //* Name of the product
-                                                        Text(
-                                                            'Apple',
-                                                            style: TextStyle(
-                                                                color: Colors.black,
-                                                                fontSize: 20,
-                                                                fontWeight: FontWeight.bold
-                                                            ),
-                                                        ),
-                                                            
-                                                        //* Price of the product
-                                                        Text(
-                                                            '\$2.99',
-                                                            style: TextStyle(
-                                                                color: Colors.black54,
-                                                                fontSize: 18,
-                                                                fontWeight: FontWeight.bold
-                                                            ),
-                                                        ),
-                                                        
-                                                        //* Image of the product
-                                                        Image.asset(
-                                                            'assets/fruits/apple.png',
-                                                            height: 150,
-                                                            width: 150,
-                                                            fit: BoxFit.cover,
-                                                        ),
-                                                            
-                                                        //* Add (+) Icon
-                                                        Container(
-                                                            padding: EdgeInsets.all(8),
-                                                            margin: EdgeInsets.only(left: 104),
-                                                            
-                                                            decoration: BoxDecoration(
-                                                                color: Colors.green[800],
-                                                                borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                            ),
-                                                        
-                                                            child: Icon(
-                                                                Icons.add,
-                                                                size: 30,
-                                                                color: Colors.white,
-                                                            ),
-                                                        ),
-                                                    ],
-                                                ),
-                                            ),
                                         ),
-                
+                                        
                                         //* For Cherry
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Cherry',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Cherry',
+                                            imagePath: 'assets/fruits/cherry.png',
+                                            price: 3.00,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Cherry',
+                                                            imagePath: 'assets/fruits/cherry.png',
+                                                            price: 3.00,
+                                                            description: 'Sweet and juicy cherries packed with vitamins.',
+                                                            color: Color(0xFFE74C3C),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/cherry.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-                
+                                        
                                         //* For Grapes
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Grapes',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Grapes',
+                                            imagePath: 'assets/fruits/grapes.png',
+                                            price: 2.49,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Grapes',
+                                                            imagePath: 'assets/fruits/grapes.png',
+                                                            price: 2.49,
+                                                            description: 'Sweet and juicy grapes packed with vitamins.',
+                                                            color: Color(0xFFA569BD),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/grapes.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-                
+
                                         //* For Kiwi
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Kiwi',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Kiwi',
+                                            imagePath: 'assets/fruits/kiwi.png',
+                                            price: 1.29,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Kiwi',
+                                                            imagePath: 'assets/fruits/kiwi.png',
+                                                            price: 1.29,
+                                                            description: 'Sweet and juicy kiwis packed with vitamins.',
+                                                            color: Color(0xFFB4E364),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/kiwi.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-                
+                                        
                                         //* For Mango
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Mango',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Mango',
+                                            imagePath: 'assets/fruits/mango.png',
+                                            price: 1.50,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Mango',
+                                                            imagePath: 'assets/fruits/mango.png',
+                                                            price: 1.50,
+                                                            description: 'Sweet and juicy mangoes packed with vitamins.',
+                                                            color: Color(0xFFE8D27A),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/mango.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-                
+                                        
                                         //* For Lychee
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Lychee',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Lychee',
+                                            imagePath: 'assets/fruits/lychee.png',
+                                            price: 2.00,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Lychee',
+                                                            imagePath: 'assets/fruits/lychee.png',
+                                                            price: 2.00,
+                                                            description: 'Sweet and juicy lychees packed with vitamins.',
+                                                            color: Color(0xFFF2B8A0),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/lychee.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-                
+                                        
                                         //* For Rose Apple
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Rose Apple',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Rose Apple',
+                                            imagePath: 'assets/fruits/roseapple.png',
+                                            price: 2.49,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Rose Apple',
+                                                            imagePath: 'assets/fruits/roseapple.png',
+                                                            price: 2.49,
+                                                            description: 'Sweet and juicy grapes packed with vitamins.',
+                                                            color: Color(0xFFE27B87),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/roseapple.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-                
+                                        
                                         //* For Water Melon
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Water Melon',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Water Melon',
+                                            imagePath: 'assets/fruits/watermelon.png',
+                                            price: 1.20,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Water Melon',
+                                                            imagePath: 'assets/fruits/watermelon.png',
+                                                            price: 1.20,
+                                                            description: 'Sweet and juicy watermelons packed with vitamins.',
+                                                            color: Color(0xFFFF6F61),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/watermelon.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-                
+                                        
                                         //* For Avocado
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Avocado',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Avocado',
+                                            imagePath: 'assets/fruits/avocado.png',
+                                            price: 2.20,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Avocado',
+                                                            imagePath: 'assets/fruits/avocado.png',
+                                                            price: 2.20,
+                                                            description: 'Sweet and juicy avocados packed with vitamins.',
+                                                            color: Color(0xFF7AC68B),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/avocado.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-                
+                                        
                                         //* For Banana
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Banana',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Banana',
+                                            imagePath: 'assets/fruits/banana.png',
+                                            price: 1.00,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Banana',
+                                                            imagePath: 'assets/fruits/banana.png',
+                                                            price: 1.00,
+                                                            description: 'Sweet and juicy bananas packed with vitamins.',
+                                                            color: Color(0xFFF7E56A),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/banana.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-                
+                                        
                                         //* For Blue Berry
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Blue Berry',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Blue Berry',
+                                            imagePath: 'assets/fruits/blueberry.png',
+                                            price: 2.50,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Blue Berry',
+                                                            imagePath: 'assets/fruits/blueberry.png',
+                                                            price: 2.50,
+                                                            description: 'Sweet and juicy blueberries packed with vitamins.',
+                                                            color: Color(0xFF5A77A1),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/blueberry.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-                
+                                        
                                         //* For Guava
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Guava',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Guava',
+                                            imagePath: 'assets/fruits/guava.png',
+                                            price: 1.30,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Guava',
+                                                            imagePath: 'assets/fruits/guava.png',
+                                                            price: 1.30,
+                                                            description: 'Sweet and juicy guavas packed with vitamins.',
+                                                            color: Color(0xFFA8D18D),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/guava.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-                
+                                        
                                         //* For Pomogranate
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Pomogranate',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Pomogranate',
+                                            imagePath: 'assets/fruits/pomogranate.png',
+                                            price: 2.85,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Pomogranate',
+                                                            imagePath: 'assets/fruits/pomogranate.png',
+                                                            price: 2.85,
+                                                            description: 'Sweet and juicy pomogranates packed with vitamins.',
+                                                            color: Color(0xFFC7384F),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/pomogranate.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-                
+                                        
                                         //* For Star Fruit
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Star Fruit',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Star Fruit',
+                                            imagePath: 'assets/fruits/starfruit.png',
+                                            price: 1.75,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Star Fruit',
+                                                            imagePath: 'assets/fruits/starfruit.png',
+                                                            price: 1.75,
+                                                            description: 'Sweet and juicy starfruits packed with vitamins.',
+                                                            color: Color(0xFFF2E661),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/starfruit.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-                
+                                        
                                         //* For Raspberry
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Raspberry',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Raspberry',
+                                            imagePath: 'assets/fruits/raspberry.png',
+                                            price: 2.40,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Raspberry',
+                                                            imagePath: 'assets/fruits/raspberry.png',
+                                                            price: 2.40,
+                                                            description: 'Sweet and juicy raspberries packed with vitamins.',
+                                                            color: Color(0xFFD93A67),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/raspberry.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-                
+                                        
                                         //* For Passion Fruit
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Passion Fruit',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Passion Fruit',
+                                            imagePath: 'assets/fruits/passionfruit.png',
+                                            price: 2.10,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Passion Fruit',
+                                                            imagePath: 'assets/fruits/passionfruit.png',
+                                                            price: 2.10,
+                                                            description: 'Sweet and juicy passionfruits packed with vitamins.',
+                                                            color: Color(0xFFE3B93E),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/passionfruit.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-                
+                                        
                                         //* For Dragon Fruit
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-                
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Dragon Fruit',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Dragon Fruit',
+                                            imagePath: 'assets/fruits/dragonfruit.png',
+                                            price: 2.50,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Dragon Fruit',
+                                                            imagePath: 'assets/fruits/dragonfruit.png',
+                                                            price: 2.50,
+                                                            description: 'Sweet and juicy dragonfruits packed with vitamins.',
+                                                            color: Color(0xFFF06292),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/fruits/dragonfruit.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-                
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-                
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-                
+                                        
                                         
                                     ],
                                 ),
@@ -1653,6 +824,7 @@ class _HomeState extends State<Home> {
 
                             SizedBox(height: 20),
 
+                            //* The Vegetable List
                             Container(
                                 height: 261,
 
@@ -1663,1264 +835,570 @@ class _HomeState extends State<Home> {
                                         //* All design for a single product
                                         
                                         //* For Mushroom
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Mushroom',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Mushroom',
+                                            imagePath: 'assets/vegetables/mushroom.png',
+                                            price: 1.10,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Mushroom',
+                                                            imagePath: 'assets/vegetables/mushroom.png',
+                                                            price: 1.10,
+                                                            description: 'Fresh mushrooms packed with vitamins.',
+                                                            color: Color(0xFFB7A48C),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/mushroom.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-
+                                        
                                         //* For Capsicum
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Capsicum',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Capsicum',
+                                            imagePath: 'assets/vegetables/capsicum.png',
+                                            price: 1.60,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Capsicum',
+                                                            imagePath: 'assets/vegetables/capsicum.png',
+                                                            price: 1.60,
+                                                            description: 'Fresh capsicum packed with vitamins.',
+                                                            color: Color(0xFF4B7B3F),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/capsicum.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
-
+                                        
                                         //* For Lemon
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Lemon',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Lemon',
+                                            imagePath: 'assets/vegetables/lemon.png',
+                                            price: 1.20,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Lemon',
+                                                            imagePath: 'assets/vegetables/lemon.png',
+                                                            price: 1.20,
+                                                            description: 'Fresh Lemon packed with vitamins.',
+                                                            color: Color(0xFFF9E34B),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
+                                                );
+                                            },
+                                        ),
+                                        
+                                        //* Potato
+                                        ProductCard(
+                                            name: 'Potato',
+                                            imagePath: 'assets/vegetables/potato.png',
+                                            price: 0.90,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Potato',
+                                                            imagePath: 'assets/vegetables/potato.png',
+                                                            price: 0.90,
+                                                            description: 'Fresh and starchy potatoes, perfect for any dish.',
+                                                            color: Color(0xFF8B6E3B),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/lemon.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
 
-                                        //* For Potato
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Potato',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        //* Tomato
+                                        ProductCard(
+                                            name: 'Tomato',
+                                            imagePath: 'assets/vegetables/tomato.png',
+                                            price: 1.10,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Tomato',
+                                                            imagePath: 'assets/vegetables/tomato.png',
+                                                            price: 1.10,
+                                                            description: 'Juicy red tomatoes, great for salads and sauces.',
+                                                            color: Color(0xFFC63727), // richer shade for detail page
                                                         ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/potato.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
 
-                                        //* For Tomato
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Tomato',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        //* Garlic
+                                        ProductCard(
+                                            name: 'Garlic',
+                                            imagePath: 'assets/vegetables/garlic.png',
+                                            price: 1.50,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Garlic',
+                                                            imagePath: 'assets/vegetables/garlic.png',
+                                                            price: 1.50,
+                                                            description: 'Aromatic garlic bulbs to flavor your dishes.',
+                                                            color: Color(0xffcfc7bd),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/tomato.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
 
-                                        //* For Garlic
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
+                                        // Ginger
+                                        ProductCard(
+                                        name: 'Ginger',
+                                        imagePath: 'assets/vegetables/ginger.png',
+                                        price: 1.30,
+                                        color: Color(0xffffe08e),  // lighter shade for card
+                                        onTap: () {
+                                            Navigator.push(
+                                            context,
+                                            PageRouteBuilder(
+                                                pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                name: 'Ginger',
+                                                imagePath: 'assets/vegetables/ginger.png',
+                                                price: 1.30,
+                                                description: 'Fresh ginger root to add zest and flavor.',
+                                                color: Color(0xFFCDAD71), // richer shade for detail page
+                                                ),
+                                                transitionsBuilder: (_, animation, __, child) {
+                                                return SlideTransition(
+                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                    child: child,
+                                                );
+                                                },
                                             ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Garlic',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/garlic.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                            );
+                                        },
                                         ),
 
-                                        //* For Ginger
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
+                                        // Onion
+                                        ProductCard(
+                                        name: 'Onion',
+                                        imagePath: 'assets/vegetables/onion.png',
+                                        price: 0.80,
+                                        color: Color(0xFFFFDAB9),  // lighter shade for card
+                                        onTap: () {
+                                            Navigator.push(
+                                            context,
+                                            PageRouteBuilder(
+                                                pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                name: 'Onion',
+                                                imagePath: 'assets/vegetables/onion.png',
+                                                price: 0.80,
+                                                description: 'Crisp and flavorful onions for every recipe.',
+                                                color: Color(0xFFB36B00), // richer shade for detail page
+                                                ),
+                                                transitionsBuilder: (_, animation, __, child) {
+                                                return SlideTransition(
+                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                    child: child,
+                                                );
+                                                },
                                             ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Ginger',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/ginger.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                            );
+                                        },
                                         ),
 
-                                        //* For Onion
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
+                                        // Carrot
+                                        ProductCard(
+                                        name: 'Carrot',
+                                        imagePath: 'assets/vegetables/carrot.png',
+                                        price: 1.00,
+                                        color: Color(0xFFFFB347),  // lighter orange for card
+                                        onTap: () {
+                                            Navigator.push(
+                                            context,
+                                            PageRouteBuilder(
+                                                pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                name: 'Carrot',
+                                                imagePath: 'assets/vegetables/carrot.png',
+                                                price: 1.00,
+                                                description: 'Crunchy and sweet carrots, perfect for snacks.',
+                                                color: Color(0xFFCD6600), // richer shade for detail page
+                                                ),
+                                                transitionsBuilder: (_, animation, __, child) {
+                                                return SlideTransition(
+                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                    child: child,
+                                                );
+                                                },
                                             ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Onion',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/onion.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                            );
+                                        },
                                         ),
 
-                                        //* For Carrot
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
+                                        // Beetroot
+                                        ProductCard(
+                                        name: 'Beetroot',
+                                        imagePath: 'assets/vegetables/beetroot.png',
+                                        price: 1.20,
+                                        color: Color(0xFFDE3163),  // lighter reddish-pink for card
+                                        onTap: () {
+                                            Navigator.push(
+                                            context,
+                                            PageRouteBuilder(
+                                                pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                name: 'Beetroot',
+                                                imagePath: 'assets/vegetables/beetroot.png',
+                                                price: 1.20,
+                                                description: 'Earthy and sweet beetroots, rich in nutrients.',
+                                                color: Color(0xFF9C2547), // richer shade for detail page
+                                                ),
+                                                transitionsBuilder: (_, animation, __, child) {
+                                                return SlideTransition(
+                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                    child: child,
+                                                );
+                                                },
                                             ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Carrot',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/carrot.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                            );
+                                        },
                                         ),
 
-                                        //* For Beetroot
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
+                                        // Eggplant
+                                        ProductCard(
+                                        name: 'Eggplant',
+                                        imagePath: 'assets/vegetables/eggplant.png',
+                                        price: 1.30,
+                                        color: Color(0xFFB565A7),  // lighter purple for card
+                                        onTap: () {
+                                            Navigator.push(
+                                            context,
+                                            PageRouteBuilder(
+                                                pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                name: 'Eggplant',
+                                                imagePath: 'assets/vegetables/eggplant.png',
+                                                price: 1.30,
+                                                description: 'Smooth and tender eggplants, ideal for grilling.',
+                                                color: Color(0xFF6F3975), // richer shade for detail page
+                                                ),
+                                                transitionsBuilder: (_, animation, __, child) {
+                                                return SlideTransition(
+                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                    child: child,
+                                                );
+                                                },
                                             ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Beetroot',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/beetroot.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                            );
+                                        },
                                         ),
 
-                                        //* For Eggplant
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
+                                        // Cucumber
+                                        ProductCard(
+                                        name: 'Cucumber',
+                                        imagePath: 'assets/vegetables/cucumber.png',
+                                        price: 0.75,
+                                        color: Color(0xFFB0E57C),  // lighter green for card
+                                        onTap: () {
+                                            Navigator.push(
+                                            context,
+                                            PageRouteBuilder(
+                                                pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                name: 'Cucumber',
+                                                imagePath: 'assets/vegetables/cucumber.png',
+                                                price: 0.75,
+                                                description: 'Cool and refreshing cucumbers for salads.',
+                                                color: Color(0xFF689F38), // richer shade for detail page
+                                                ),
+                                                transitionsBuilder: (_, animation, __, child) {
+                                                return SlideTransition(
+                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                    child: child,
+                                                );
+                                                },
                                             ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Eggplant',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/eggplant.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                            );
+                                        },
                                         ),
 
-                                        //* For Cucumber
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
+                                        // Jalapeno
+                                        ProductCard(
+                                        name: 'Jalapeno',
+                                        imagePath: 'assets/vegetables/jalapeno.png',
+                                        price: 1.60,
+                                        color: Color(0xFF7ED957),  // lighter green for card
+                                        onTap: () {
+                                            Navigator.push(
+                                            context,
+                                            PageRouteBuilder(
+                                                pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                name: 'Jalapeno',
+                                                imagePath: 'assets/vegetables/jalapeno.png',
+                                                price: 1.60,
+                                                description: 'Spicy jalapenos to add heat to your meals.',
+                                                color: Color(0xFF357A38), // richer shade for detail page
+                                                ),
+                                                transitionsBuilder: (_, animation, __, child) {
+                                                return SlideTransition(
+                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                    child: child,
+                                                );
+                                                },
                                             ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Cucumber',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/cucumber.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                            );
+                                        },
                                         ),
 
-                                        //* For Jalapeno
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
+                                        // Pumpkin
+                                        ProductCard(
+                                        name: 'Pumpkin',
+                                        imagePath: 'assets/vegetables/pumpkin.png',
+                                        price: 1.10,
+                                        color: Color(0xFFFFD27F),  // lighter orange for card
+                                        onTap: () {
+                                            Navigator.push(
+                                            context,
+                                            PageRouteBuilder(
+                                                pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                name: 'Pumpkin',
+                                                imagePath: 'assets/vegetables/pumpkin.png',
+                                                price: 1.10,
+                                                description: 'Sweet pumpkin, perfect for soups and pies.',
+                                                color: Color(0xFFB26500), // richer shade for detail page
+                                                ),
+                                                transitionsBuilder: (_, animation, __, child) {
+                                                return SlideTransition(
+                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                    child: child,
+                                                );
+                                                },
                                             ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Jalapeno',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/jalapeno.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                            );
+                                        },
                                         ),
 
-                                        //* For Pumpkin
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
+                                        // Cabbage
+                                        ProductCard(
+                                        name: 'Cabbage',
+                                        imagePath: 'assets/vegetables/cabbage.png',
+                                        price: 0.85,
+                                        color: Color(0xFFC1E1C1),  // lighter green for card
+                                        onTap: () {
+                                            Navigator.push(
+                                            context,
+                                            PageRouteBuilder(
+                                                pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                name: 'Cabbage',
+                                                imagePath: 'assets/vegetables/cabbage.png',
+                                                price: 0.85,
+                                                description: 'Crunchy cabbage, great for salads and cooking.',
+                                                color: Color(0xFF7BA66D), // richer shade for detail page
+                                                ),
+                                                transitionsBuilder: (_, animation, __, child) {
+                                                return SlideTransition(
+                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                    child: child,
+                                                );
+                                                },
                                             ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Pumpkin',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/pumpkin.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                            );
+                                        },
                                         ),
 
-                                        //* For Cabbage
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
+                                        // Cauliflower
+                                        ProductCard(
+                                        name: 'Cauliflower',
+                                        imagePath: 'assets/vegetables/cauliflower.png',
+                                        price: 1.00,
+                                        color: Color(0xFFEDEDED),  // light cream for card
+                                        onTap: () {
+                                            Navigator.push(
+                                            context,
+                                            PageRouteBuilder(
+                                                pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                name: 'Cauliflower',
+                                                imagePath: 'assets/vegetables/cauliflower.png',
+                                                price: 1.00,
+                                                description: 'Fresh cauliflower heads, perfect for healthy meals.',
+                                                color: Color(0xFFB4B4B4), // richer shade for detail page
+                                                ),
+                                                transitionsBuilder: (_, animation, __, child) {
+                                                return SlideTransition(
+                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                    child: child,
+                                                );
+                                                },
                                             ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Cabbage',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/cabbage.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                            );
+                                        },
                                         ),
 
-                                        //* For Cauliflower
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
+                                        // Broccoli
+                                        ProductCard(
+                                        name: 'Broccoli',
+                                        imagePath: 'assets/vegetables/broccoli.png',
+                                        price: 1.25,
+                                        color: Color(0xFFA2D149),  // lighter green for card
+                                        onTap: () {
+                                            Navigator.push(
+                                            context,
+                                            PageRouteBuilder(
+                                                pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                name: 'Broccoli',
+                                                imagePath: 'assets/vegetables/broccoli.png',
+                                                price: 1.25,
+                                                description: 'Fresh broccoli rich in vitamins and minerals.',
+                                                color: Color(0xFF567D29), // richer shade for detail page
+                                                ),
+                                                transitionsBuilder: (_, animation, __, child) {
+                                                return SlideTransition(
+                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                    child: child,
+                                                );
+                                                },
                                             ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Cauliflower',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/cauliflower.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                            );
+                                        },
                                         ),
 
-                                        //* For Broccoli
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
+                                        // Ladyfinger (Okra)
+                                        ProductCard(
+                                        name: 'Ladyfinger',
+                                        imagePath: 'assets/vegetables/ladyfinger.png',
+                                        price: 1.00,
+                                        color: Color(0xFF8FBC8F),  // lighter green for card
+                                        onTap: () {
+                                            Navigator.push(
+                                            context,
+                                            PageRouteBuilder(
+                                                pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                name: 'Ladyfinger',
+                                                imagePath: 'assets/vegetables/ladyfinger.png',
+                                                price: 1.00,
+                                                description: 'Fresh ladyfinger pods, great for stews and curries.',
+                                                color: Color(0xFF3E704D), // richer shade for detail page
+                                                ),
+                                                transitionsBuilder: (_, animation, __, child) {
+                                                return SlideTransition(
+                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                    child: child,
+                                                );
+                                                },
                                             ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Broccoli',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/broccoli.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                            );
+                                        },
                                         ),
 
-                                        //* For Ladyfinger
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
+                                        // Lettuce
+                                        ProductCard(
+                                        name: 'Lettuce',
+                                        imagePath: 'assets/vegetables/lettuce.png',
+                                        price: 0.90,
+                                        color: Color(0xFFB9E4C9),  // lighter green for card
+                                        onTap: () {
+                                            Navigator.push(
+                                            context,
+                                            PageRouteBuilder(
+                                                pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                name: 'Lettuce',
+                                                imagePath: 'assets/vegetables/lettuce.png',
+                                                price: 0.90,
+                                                description: 'Fresh lettuce leaves, perfect for salads.',
+                                                color: Color(0xFF5DA36F), // richer shade for detail page
+                                                ),
+                                                transitionsBuilder: (_, animation, __, child) {
+                                                return SlideTransition(
+                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                    child: child,
+                                                );
+                                                },
                                             ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Ladyfinger',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/ladyfinger.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                            );
+                                        },
                                         ),
 
-                                        //* For Lettuce
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
+                                        // Parsley
+                                        ProductCard(
+                                        name: 'Parsley',
+                                        imagePath: 'assets/vegetables/parsley.png',
+                                        price: 1.10,
+                                        color: Color(0xFF93C572),  // lighter green for card
+                                        onTap: () {
+                                            Navigator.push(
+                                            context,
+                                            PageRouteBuilder(
+                                                pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                name: 'Parsley',
+                                                imagePath: 'assets/vegetables/parsley.png',
+                                                price: 1.10,
+                                                description: 'Fresh parsley leaves to garnish and flavor dishes.',
+                                                color: Color(0xFF4B7B26), // richer shade for detail page
+                                                ),
+                                                transitionsBuilder: (_, animation, __, child) {
+                                                return SlideTransition(
+                                                    position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                    child: child,
+                                                );
+                                                },
                                             ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Lettuce',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/lettuce.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                            );
+                                        },
                                         ),
 
-                                        //* For Parsley
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Parsley',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/vegetables/parsley.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
-                                        ),
 
                                         //* Add other If you want                                        
                                     ],
@@ -2950,6 +1428,7 @@ class _HomeState extends State<Home> {
 
                             SizedBox(height: 20),
 
+                            //* The Bakery List
                             Container(
                                 height: 261,
 
