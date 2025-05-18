@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 
                                 children: [
-                                    //* Name and Profile
+                                    //* Go Back, Name and Profile
                                     Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                 
@@ -796,7 +796,34 @@ class _HomeState extends State<Home> {
                                             },
                                         ),
                                         
-                                        
+                                        //* For Lemon
+                                        ProductCard(
+                                            name: 'Lemon',
+                                            imagePath: 'assets/fruits/lemon.png',
+                                            price: 1.20,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Lemon',
+                                                            imagePath: 'assets/fruits/lemon.png',
+                                                            price: 1.20,
+                                                            description: 'Fresh Lemon packed with vitamins.',
+                                                            color: Color(0xfff9e34b),
+                                                        ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
+                                                    ),
+                                                );
+                                            },
+                                        ),
                                     ],
                                 ),
                             ),
@@ -834,35 +861,6 @@ class _HomeState extends State<Home> {
                                     children: [
                                         //* All design for a single product
                                         
-                                        //* For Mushroom
-                                        ProductCard(
-                                            name: 'Mushroom',
-                                            imagePath: 'assets/vegetables/mushroom.png',
-                                            price: 1.10,
-                                            color: Color(0xffffe08e),
-                                            onTap: () {
-                                                Navigator.push(
-                                                    context,
-                                                    PageRouteBuilder(
-                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
-                                                            name: 'Mushroom',
-                                                            imagePath: 'assets/vegetables/mushroom.png',
-                                                            price: 1.10,
-                                                            description: 'Fresh mushrooms packed with vitamins.',
-                                                            color: Color(0xFFB7A48C),
-                                                        ),
-                                                        
-                                                        transitionsBuilder: (_, animation, __, child) {
-                                                            return SlideTransition(
-                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
-                                                                child: child,
-                                                            );
-                                                        },
-                                                    ),
-                                                );
-                                            },
-                                        ),
-                                        
                                         //* For Capsicum
                                         ProductCard(
                                             name: 'Capsicum',
@@ -891,36 +889,7 @@ class _HomeState extends State<Home> {
                                                 );
                                             },
                                         ),
-                                        
-                                        //* For Lemon
-                                        ProductCard(
-                                            name: 'Lemon',
-                                            imagePath: 'assets/vegetables/lemon.png',
-                                            price: 1.20,
-                                            color: Color(0xffffe08e),
-                                            onTap: () {
-                                                Navigator.push(
-                                                    context,
-                                                    PageRouteBuilder(
-                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
-                                                            name: 'Lemon',
-                                                            imagePath: 'assets/vegetables/lemon.png',
-                                                            price: 1.20,
-                                                            description: 'Fresh Lemon packed with vitamins.',
-                                                            color: Color(0xFFF9E34B),
-                                                        ),
-                                                        
-                                                        transitionsBuilder: (_, animation, __, child) {
-                                                            return SlideTransition(
-                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
-                                                                child: child,
-                                                            );
-                                                        },
-                                                    ),
-                                                );
-                                            },
-                                        ),
-                                        
+
                                         //* Potato
                                         ProductCard(
                                             name: 'Potato',
@@ -1108,6 +1077,35 @@ class _HomeState extends State<Home> {
                                                             description: 'Earthy and sweet beetroots, rich in nutrients.',
                                                             color: Color(0xff9c2547),
                                                         ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
+                                                    ),
+                                                );
+                                            },
+                                        ),
+
+                                        //* For Mushroom
+                                        ProductCard(
+                                            name: 'Mushroom',
+                                            imagePath: 'assets/vegetables/mushroom.png',
+                                            price: 1.10,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Mushroom',
+                                                            imagePath: 'assets/vegetables/mushroom.png',
+                                                            price: 1.10,
+                                                            description: 'Fresh mushrooms packed with vitamins.',
+                                                            color: Color(0xFFB7A48C),
+                                                        ),
+                                                        
                                                         transitionsBuilder: (_, animation, __, child) {
                                                             return SlideTransition(
                                                                 position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
@@ -1439,570 +1437,256 @@ class _HomeState extends State<Home> {
                                         //* All design for a single product
                                         
                                         //* For Cupcake
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Cupcake',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Cupcake',
+                                            imagePath: 'assets/bakeries/cupcake.png',
+                                            price: 1.20,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Cupcake',
+                                                            imagePath: 'assets/bakeries/Cupcake.png',
+                                                            price: 1.20,
+                                                            description: 'Fresh different flavored cupcakes.',
+                                                            color: Color(0xFFDE3163),
                                                         ),
+                                                        
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/bakeries/cupcake.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
 
-                                        //* For Muffins
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Muffin',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        //* For Muffin
+                                        ProductCard(
+                                            name: 'Muffin',
+                                            imagePath: 'assets/bakeries/muffin.png',
+                                            price: 1.10,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Muffin',
+                                                            imagePath: 'assets/bakeries/muffin.png',
+                                                            price: 1.10,
+                                                            description: 'Soft and fluffy muffins in assorted flavors.',
+                                                            color: Color(0xffd2691e),
                                                         ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/bakeries/muffin.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
 
                                         //* For Cookies
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Cookies',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Cookies',
+                                            imagePath: 'assets/bakeries/cookie.png',
+                                            price: 0.90,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Cookies',
+                                                            imagePath: 'assets/bakeries/cookie.png',
+                                                            price: 0.90,
+                                                            description: 'Crunchy cookies loaded with chocolate chips.',
+                                                            color: Color(0xffcd853f),
                                                         ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/bakeries/cookie.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
 
                                         //* For Donut
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Donuts',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Donut',
+                                            imagePath: 'assets/bakeries/donut.png',
+                                            price: 1.30,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Donut',
+                                                            imagePath: 'assets/bakeries/donut.png',
+                                                            price: 1.30,
+                                                            description: 'Glazed donuts with sweet and colorful toppings.',
+                                                            color: Color(0xffff69b4),
                                                         ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/bakeries/donut.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
 
                                         //* For Waffle
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Waffle',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Waffle',
+                                            imagePath: 'assets/bakeries/waffle.png',
+                                            price: 1.50,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Waffle',
+                                                            imagePath: 'assets/bakeries/waffle.png',
+                                                            price: 1.50,
+                                                            description: 'Crispy golden waffles served warm.',
+                                                            color: Color(0xffe3a857),
                                                         ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/bakeries/waffle.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
 
-                                        //* For Chocolate Cake Slice
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Cake Slice',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        //* For Chocolate Slices Cake
+                                        ProductCard(
+                                            name: 'Cake Slice',
+                                            imagePath: 'assets/bakeries/chocolatecakeslice.png',
+                                            price: 1.80,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Cake Slice',
+                                                            imagePath: 'assets/bakeries/chocolatecakeslice.png',
+                                                            price: 1.80,
+                                                            description: 'Rich and moist chocolate cake slices.',
+                                                            color: Color(0xff5c4033),
                                                         ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/bakeries/chocolatecakeslice.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
 
                                         //* For Chocolate Cake
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Chocolate Cake',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Chocolate Cake',
+                                            imagePath: 'assets/bakeries/chocolatecake.png',
+                                            price: 2.50,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Chocolate Cake',
+                                                            imagePath: 'assets/bakeries/chocolatecake.png',
+                                                            price: 2.50,
+                                                            description: 'Decadent chocolate cake layered with ganache.',
+                                                            color: Color(0xff381819),
                                                         ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/bakeries/chocolatecake.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
 
                                         //* For Pancake
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Pancake',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Pancake',
+                                            imagePath: 'assets/bakeries/pancake.png',
+                                            price: 1.40,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Pancake',
+                                                            imagePath: 'assets/bakeries/pancake.png',
+                                                            price: 1.40,
+                                                            description: 'Fluffy pancakes served with maple syrup.',
+                                                            color: Color(0xffd2b48c)
                                                         ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/bakeries/panecake.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
 
                                         //* For Red Velvet Cake
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15, top: 10),
-                                            margin: EdgeInsets.only(right: 20),
-
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffffe08e),
-                                                borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                //* Name, Price and Image of the product
-                                                children: [
-                                                    //* Name of the product
-                                                    Text(
-                                                        'Redvelvet Cake',
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 20,
-                                                            fontWeight: FontWeight.bold
+                                        ProductCard(
+                                            name: 'Red Velvet Cake',
+                                            imagePath: 'assets/bakeries/redvelvetcake.png',
+                                            price: 2.20,
+                                            color: Color(0xffffe08e),
+                                            onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (_, animation, __) => ProductDetailPage(
+                                                            name: 'Red Velvet Cake',
+                                                            imagePath: 'assets/bakeries/redvelvetcake.png',
+                                                            price: 2.20,
+                                                            description: 'Classic red velvet cake with cream cheese frosting.',
+                                                            color: Color(0xffb22222),
                                                         ),
+                                                        transitionsBuilder: (_, animation, __, child) {
+                                                            return SlideTransition(
+                                                                position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero).animate(animation),
+                                                                child: child,
+                                                            );
+                                                        },
                                                     ),
-
-                                                    //* Price of the product
-                                                    Text(
-                                                        '\$2.99',
-                                                        style: TextStyle(
-                                                            color: Colors.black54,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.bold
-                                                        ),
-                                                    ),
-                                                    
-                                                    //* Image of the product
-                                                    Image.asset(
-                                                        'assets/bakeries/redvelvetcake.png',
-                                                        height: 150,
-                                                        width: 150,
-                                                        fit: BoxFit.cover,
-                                                    ),
-
-                                                    //* Add (+) Icon
-                                                    Container(
-                                                        padding: EdgeInsets.all(8),
-                                                        margin: EdgeInsets.only(left: 104),
-
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.green[800],
-                                                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomRight: Radius.circular(30))
-                                                        ),
-                                                    
-                                                        child: Icon(
-                                                            Icons.add,
-                                                            size: 30,
-                                                            color: Colors.white,
-                                                        ),
-                                                    ),
-                                                ],
-                                            ),
+                                                );
+                                            },
                                         ),
 
                                         //* Add other If you want                                        
