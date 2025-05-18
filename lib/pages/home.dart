@@ -1448,10 +1448,10 @@ class _HomeState extends State<Home> {
                                                     PageRouteBuilder(
                                                         pageBuilder: (_, animation, __) => ProductDetailPage(
                                                             name: 'Cupcake',
-                                                            imagePath: 'assets/bakeries/Cupcake.png',
+                                                            imagePath: 'assets/bakeries/cupcake.png',
                                                             price: 1.20,
                                                             description: 'Fresh different flavored cupcakes.',
-                                                            color: Color(0xFFDE3163),
+                                                            color: Color(0xffd2691e),
                                                         ),
                                                         
                                                         transitionsBuilder: (_, animation, __, child) {
