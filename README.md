@@ -1,16 +1,19 @@
-# grocery_shop_app
+# 🛒 Grocery Shop App (Flutter UI)
 
-A new Flutter project.
+A beautifully designed Flutter UI for a Grocery Shop application. This project focuses purely on front-end design and layout — built to demonstrate Flutter UI/UX capabilities using reusable components and clean navigation.
 
-## Getting Started
+## ✨ Features
 
-This project is a starting point for a Flutter application.
+- 🍓 Fresh modern layout for fruits and bakery items  
+- 🔁 Reusable widgets (`ProductCard`, `ProductDetailPage`)  
+- 🎨 Custom color schemes for each product  
+- 🚀 Smooth page transitions (slide animation)  
+- 📱 Responsive design (tested on Pixel 8 emulator and Vivo Y19 device)
 
-A few resources to get you started if this is your first Flutter project:
+## 🚧 Note
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+> This project is for **UI design only**. Functionalities like cart, quantity selection, checkout, and backend integration are **not implemented**.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📸 Screenshots
+![Image](https://github.com/user-attachments/assets/4272a463-6f09-4089-9738-f243abcf9155)
+![Gif](https://github.com/user-attachments/assets/b03e1812-7a00-4a93-8c88-db13926d881b)
