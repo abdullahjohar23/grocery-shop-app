@@ -30,7 +30,7 @@ class _LandingState extends State<Landing> {
                         SizedBox(height: 30),
 
                         Text(
-                            'Order Your\nFavourite Fruits!',
+                            'Order Your\nFavourite Food!',
                             style: TextStyle(
                                 color: Colors.redAccent[700],
                                 fontSize: 34,
@@ -41,7 +41,7 @@ class _LandingState extends State<Landing> {
                         SizedBox(height: 20),
                         
                         Text(
-                            'Eat fresh fruits and try to be healthy',
+                            'Eat Fresh, Live Healthy',
                             style: TextStyle(
                                 color: Colors.redAccent[200],
                                 fontSize: 18,
