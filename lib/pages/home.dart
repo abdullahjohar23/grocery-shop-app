@@ -1451,7 +1451,7 @@ class _HomeState extends State<Home> {
                                                             imagePath: 'assets/bakeries/cupcake.png',
                                                             price: 1.20,
                                                             description: 'Fresh different flavored cupcakes.',
-                                                            color: Color(0xffd2691e),
+                                                            color: Color(0xff5c4033),
                                                         ),
                                                         
                                                         transitionsBuilder: (_, animation, __, child) {
